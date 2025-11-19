@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko" data-theme="dark" class="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MyDevice</title>
+  <link rel="stylesheet" href="전자기기_css.css" />
+</head>
+<body>
+  <div id="top-banner" class="banner" aria-live="polite">
+    <span class="banner-text">최신 입력장치 세팅 로딩 중…</span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#home" aria-label="MyDevice 홈">MyDevice</a>
+
+      <nav class="nav" id="primary-nav" aria-label="주요">
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="메뉴 열기">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#intro">소개</a></li>
+          <li><a href="#gallery">갤러리</a></li>
+          <li><a href="#specs">스펙</a></li>
+          <li><a href="#contact">연락</a></li>
+        </ul>
+      </nav>
+
+      <button id="theme-toggle" class="theme-toggle" aria-label="다크모드 전환" aria-pressed="false" title="다크모드 전환">
+        <span class="icon moon" aria-hidden="true">🌙</span>
+        <span class="icon sun" aria-hidden="true">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section id="intro" class="hero">
+      <h1 class="hero-title">MyDevice</h1>
+      <p class="hero-sub">내 전자기기 소개, 장단점, 상세 사양을 한곳에서.</p>
+      <div class="hero-actions">
+        <a href="#gallery" class="btn primary">갤러리 보기</a>
+        <a href="#specs" class="btn ghost">사양 바로가기</a>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="section-head">
+        <h2>이미지 슬라이더</h2>
+        <p class="muted">보유 중인 주요 디바이스를 좌우로 넘겨 보세요.</p>
+      </div>
+
+      <div class="slider" id="device-slider" aria-roledescription="carousel" aria-label="전자기기 슬라이드">
+        <div class="slides" id="slides" tabindex="0"></div>
+        <button class="slide-nav prev" id="prev-btn" aria-label="이전 슬라이드">‹</button>
+        <button class="slide-nav next" id="next-btn" aria-label="다음 슬라이드">›</button>
+        <div class="dots" id="dots" role="tablist" aria-label="슬라이드 선택 점"></div>
+      </div>
+    </section>
+
+    <section id="specs" class="section">
+      <div class="section-head">
+        <h2>디바이스 목록 · 장단점 · 사양</h2>
+        <p class="muted">그리드 배치. 카드 내부는 Flex로 정렬.</p>
+      </div>
+      <div id="device-grid" class="device-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-head">
+        <h2>연락</h2>
+        <p class="muted">문의가 필요하면 아래로.</p>
+      </div>
+      <form class="contact-form" onsubmit="return false" aria-label="연락 양식">
+        <div class="row">
+          <input type="text" placeholder="이름" aria-label="이름" />
+          <input type="email" placeholder="이메일" aria-label="이메일" />
+        </div>
+        <textarea placeholder="내용" rows="4" aria-label="내용"></textarea>
+        <button class="btn primary" type="submit">보내기</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> MyDevice</p>
+  </footer>
+
+  <!-- 모듈 아님, defer만 사용 -->
+  <script src="전자기기_javascript.js" defer></script>
+</body>
+</html>
