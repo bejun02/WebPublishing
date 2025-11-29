@@ -18,6 +18,8 @@ const Names = {
   gpu: "그래픽카드.png",
   ssd: "SSD.png",
   cpu: "CPU.png",
+  phone: "스마트폰.GIF",
+  buds: "버즈2 프로.GIF",
 };
 
 /**
@@ -68,104 +70,130 @@ function setImageSmart(img, fileName, alt) {
 // ===== 기기 데이터 =====
 const Devices = [
   {
-    name: "기계식 키보드",
+    name: "AULA F108",
     key: "keyboard",
-    description: "청축 스위치의 시원한 타건감으로 코딩과 문서 작업이 즐거워지는 입력장치",
-    badges: ["입력장치", "RGB"],
-    rating: 4.5,
-    pros: ["타건감 선명", "핫스왑 가능", "RGB 커스터마이징"],
-    cons: ["소음 큼", "무게 있음"],
-    specs: { 스위치: "청축", 연결: "유선 USB-C", 키배열: "87 TKL", 무게: "900g" }
-  },
-  {
-    name: "무선 컨트롤러",
-    key: "controller",
-    description: "PC와 콘솔을 넘나드는 멀티플랫폼 게이밍의 필수품",
-    badges: ["게임", "Bluetooth"],
+    description: "카라멜라떼축의 부드러운 타건감과 트리플 연결을 지원하는 풀배열 무선 기계식 키보드",
+    badges: ["입력장치"],
     rating: 4.0,
-    pros: ["그립감 우수", "지연 낮음", "멀티 플랫폼"],
-    cons: ["배터리 관리 필요"],
-    specs: { 연결: "BT 5.0 / 2.4GHz", 배터리: "20h", 진동: "듀얼", 무게: "240g" }
+    pros: ["가성비", "높은 스테빌라이저", "좋은 타건감"],
+    cons: ["타건 소리 큼", "불편한 RGB 커스터마이징", "배터리 미표시"],
+    specs: { 스위치: "카라멜라떼축", 연결: "블루투스, 2.4G, 유선 USB-C", 키배열: "108", 무게: "1.2kg", 배터리: "8,000mAh" }
   },
   {
-    name: "2.1채널 스피커",
+    name: "MOGA 컨트롤러",
+    key: "controller",
+    description: "가벼우면서도 튼튼한 내구성을 갖춘 모바일/PC 겸용 무선 게임패드",
+    badges: ["입력장치"],
+    rating: 3.5,
+    pros: ["가벼운 무게", "높은 내구성", "오래가는 배터리"],
+    cons: ["아쉬운 마감 처리", "밋밋한 클릭감", "진동 기능 없음"],
+    specs: { 연결: "블루투스, USB-A, USB-C", 무게: "215g", 배터리: "3,000mAh" }
+  },
+  {
+    name: "에디파이어 M60",
     key: "speaker",
-    description: "서브우퍼가 만들어내는 풍부한 저음으로 몰입감 있는 사운드 경험",
-    badges: ["오디오", "우퍼"],
-    rating: 4.2,
-    pros: ["저음 탄탄", "볼륨 노브 편리", "음질 선명"],
-    cons: ["공간 차지"],
-    specs: { 출력: "60W RMS", 입력: "3.5mm / AUX", 전원: "AC", 재생대역: "50Hz~20kHz" }
-  },
-  {
-    name: "27\" QHD 모니터",
-    key: "monitor",
-    description: "색감과 주사율 모두 잡은 게이밍 & 작업용 만능 디스플레이",
-    badges: ["디스플레이", "IPS"],
-    rating: 4.8,
-    pros: ["색 정확도 높음", "높낮이/피벗 지원", "144Hz 부드러움"],
-    cons: ["HDR 보통"],
-    specs: { 해상도: "2560×1440", 주사율: "144Hz", 응답속도: "1ms MPRT", 포트: "HDMI×2, DP×1" }
-  },
-  {
-    name: "무선 마우스",
-    key: "mouse",
-    description: "59g 초경량 설계로 장시간 사용해도 피로감 없는 게이밍 마우스",
-    badges: ["입력장치", "초경량"],
-    rating: 4.6,
-    pros: ["정밀 트래킹", "그립 안정", "초경량 설계"],
-    cons: ["손 큰 사용자 비추천"],
-    specs: { 센서: "PAW3395", 무게: "59g", 연결: "2.4G/BT/유선", DPI: "26K" }
-  },
-  {
-    name: "노트북",
-    key: "laptop",
-    description: "강의실에서 카페까지, 어디서든 생산성을 유지하는 휴대용 워크스테이션",
-    badges: ["모바일", "학생용"],
-    rating: 4.3,
-    pros: ["휴대성 우수", "배터리 효율", "조용한 팬"],
-    cons: ["업그레이드 제한"],
-    specs: { CPU: "Intel i7", RAM: "16GB", 저장장치: "512GB NVMe", 무게: "1.4kg" }
-  },
-  {
-    name: "그래픽카드",
-    key: "gpu",
-    description: "4K 게이밍과 딥러닝 학습을 동시에 소화하는 고성능 GPU",
-    badges: ["PC부품", "CUDA"],
+    description: "컴팩트한 사이즈에 강력한 출력을 담은 2.0채널 블루투스 스피커",
+    badges: ["출력장치"],
     rating: 4.7,
-    pros: ["연산 성능 최상", "DLSS 지원", "레이트레이싱"],
-    cons: ["발열", "소모전력 높음"],
-    specs: { 메모리: "12GB GDDR6X", 버스: "PCIe 4.0", 전원: "8+8핀", 출력: "HDMI/DP" }
+    pros: ["작고 이쁜 디자인", "가성비", "연결성"],
+    cons: ["아쉬운 해상도", "부족한 우퍼"],
+    specs: { 연결: "블루투스, 코덱, USB-C", 무게: "3.07kg", 출력: "트레블 15W×2, 중저음 18W×2", 주파수응답: "58Hz~40kHz" }
   },
   {
-    name: "NVMe SSD",
+    name: "MSI 게이밍 모니터",
+    key: "monitor",
+    description: "165Hz 고주사율로 부드러운 게이밍 경험을 선사하는 가성비 모니터",
+    badges: ["출력장치"],
+    rating: 3.7,
+    pros: ["무결점", "가성비", "디자인"],
+    cons: ["FHD 해상도", "무거운 무게"],
+    specs: { 해상도: "FHD (1920×1080)", 주사율: "최대 165Hz", 응답속도: "1ms MPRT", 포트: "HDMI×2, DP×1" }
+  },
+  {
+    name: "R1 PRO MAX",
+    key: "mouse",
+    description: "57g 초경량 바디에 145시간 배터리를 탑재한 가성비 무선 마우스",
+    badges: ["입력장치"],
+    rating: 4.6,
+    pros: ["가벼운 무게", "오래가는 배터리", "가성비"],
+    cons: ["소음", "인피니티 휠 미지원"],
+    specs: { 무게: "57g", 연결: "USB-C, 블루투스", 배터리: "145h" }
+  },
+  {
+    name: "HP Envy x360",
+    key: "laptop",
+    description: "터치스크린과 360도 힌지로 다양한 활용이 가능한 2-in-1 컨버터블 노트북",
+    badges: ["모바일"],
+    rating: 4.2,
+    pros: ["저소음", "가성비", "디자인"],
+    cons: ["약한 힌지", "애매한 무게", "펜 미포함"],
+    specs: { CPU: "Ryzen 5 8640HS", 스크린: "14인치, 300nit, 2.2K, 터치", 그래픽: "내장 그래픽", 메모리: "16GB", 저장장치: "1TB SSD", 배터리: "최대 15시간", 무게: "1.39kg" }
+  },
+  {
+    name: "GIGABYTE RTX 4060",
+    key: "gpu",
+    description: "DLSS 3와 레이트레이싱을 지원하는 1080p 게이밍 최적화 그래픽카드",
+    badges: ["부품"],
+    rating: 4.3,
+    pros: ["낮은 전력 소모", "DLSS 3 지원", "저발열"],
+    cons: ["8GB VRAM 한계", "가격 대비 애매한 포지션"],
+    specs: { 메모리: "8GB GDDR6", 부스트클럭: "2,475MHz", TDP: "115W", 출력: "HDMI 2.1, DP 1.4×3" }
+  },
+  {
+    name: "GIGABYTE SATA SSD 1TB",
     key: "ssd",
-    description: "7,000MB/s의 극강 속도로 로딩 시간을 잊게 만드는 초고속 저장장치",
-    badges: ["PC부품", "M.2"],
-    rating: 4.9,
-    pros: ["부팅/로딩 빠름", "무소음", "저발열"],
-    cons: ["수명 관리 필요"],
-    specs: { 규격: "2280", 인터페이스: "PCIe 4.0 x4", 읽기: "7,000MB/s", 쓰기: "6,100MB/s" }
+    description: "안정적인 성능과 넉넉한 용량을 갖춘 SATA 인터페이스 SSD",
+    badges: ["부품"],
+    rating: 4.1,
+    pros: ["가성비", "안정성", "낮은 발열"],
+    cons: ["NVMe 대비 느린 속도", "구형 인터페이스"],
+    specs: { 규격: "2.5인치", 인터페이스: "SATA III 6Gb/s", 읽기: "550MB/s", 쓰기: "500MB/s", 용량: "1TB" }
   },
   {
-    name: "CPU",
+    name: "Intel i5-12400F",
     key: "cpu",
-    description: "8코어 16스레드의 강력한 멀티태스킹 성능을 자랑하는 두뇌",
-    badges: ["PC부품", "멀티코어"],
-    rating: 4.4,
-    pros: ["멀티스레드 강함", "오버클럭 가능", "내장그래픽 없음(효율)"],
-    cons: ["발열 관리 필요"],
-    specs: { 코어: "8C/16T", 클럭: "5.0GHz", 캐시: "24MB", 소켓: "LGA1700" }
+    description: "내장그래픽 없이 효율적인 가성비를 자랑하는 6코어 12스레드 CPU",
+    badges: ["부품"],
+    rating: 4.5,
+    pros: ["뛰어난 가성비", "낮은 발열", "충분한 게이밍 성능"],
+    cons: ["내장그래픽 없음", "오버클럭 미지원"],
+    specs: { 코어: "6C/12T", 클럭: "2.5GHz (부스트 4.4GHz)", 캐시: "18MB", 소켓: "LGA1700", TDP: "65W" }
+  },
+  {
+    name: "갤럭시 S22+",
+    key: "phone",
+    description: "균형 잡힌 성능과 세련된 디자인의 삼성 플래그십 스마트폰",
+    badges: ["모바일"],
+    rating: 4.7,
+    pros: ["디자인", "오래가는 배터리", "내구도"],
+    cons: ["아쉬운 두께", "아쉬운 성능"],
+    specs: { AP: "스냅드래곤 8 Gen 1", 메모리: "8GB", 저장공간: "256GB", 무게: "167g", 배터리: "4,500mAh" }
+  },
+  {
+    name: "갤럭시 버즈2 Pro",
+    key: "buds",
+    description: "24bit Hi-Fi 사운드와 지능형 ANC를 탑재한 프리미엄 무선 이어버드",
+    badges: ["모바일"],
+    rating: 4.6,
+    pros: ["24bit Hi-Fi 음질", "강력한 ANC", "편안한 착용감"],
+    cons: ["아쉬운 통화 품질", "케이스 무선충전 속도"],
+    specs: { 드라이버: "코액셜 2-way", ANC: "지능형 ANC", 배터리: "5h (ANC ON), 케이스 포함 18h", 연결: "Bluetooth 5.3", 방수: "IPX7" }
   }
 ];
 
-// ===== 슬라이더용 기기 부분집합 =====
+// ===== 슬라이더용 기기 (전체 기기) =====
 const SliderSet = [
-  { key: "laptop", caption: "노트북" },
-  { key: "monitor", caption: "QHD 모니터" },
-  { key: "keyboard", caption: "기계식 키보드" },
-  { key: "mouse", caption: "무선 마우스" },
-  { key: "controller", caption: "컨트롤러" },
+  { key: "keyboard", caption: "AULA F108" },
+  { key: "controller", caption: "MOGA 컨트롤러" },
+  { key: "speaker", caption: "에디파이어 M60" },
+  { key: "monitor", caption: "MSI 게이밍 모니터" },
+  { key: "mouse", caption: "R1 PRO MAX" },
+  { key: "laptop", caption: "HP Envy x360" },
+  { key: "gpu", caption: "GIGABYTE RTX 4060" },
+  { key: "ssd", caption: "GIGABYTE SATA SSD 1TB" },
+  { key: "cpu", caption: "Intel i5-12400F" },
+  { key: "phone", caption: "갤럭시 S22+" },
+  { key: "buds", caption: "갤럭시 버즈2 Pro" },
 ];
 
 // ===== 테마 모듈 =====
@@ -454,54 +482,38 @@ const Render = (() => {
   };
 
   const createCard = (device) => {
+    // 컨테이너 생성
+    const container = document.createElement("div");
+    container.className = "device-card-container";
+    container.dataset.categories = device.badges.join(",");
+    container.dataset.name = device.name;
+    container.dataset.rating = device.rating || 0;
+    container.dataset.deviceKey = device.key;
+
+    // 카드
     const card = document.createElement("article");
     card.className = "device-card";
-    card.dataset.categories = device.badges.join(",");
-    card.dataset.name = device.name;
-    card.dataset.rating = device.rating || 0;
 
+    // 이미지 영역
     const media = document.createElement("div");
     media.className = "device-media";
-
     const img = document.createElement("img");
     setImageSmart(img, Names[device.key], device.name);
-    img.style.cursor = "pointer";
-    img.addEventListener("click", () => {
-      Modal.open(img.src, device.name);
-    });
     media.appendChild(img);
 
-    const body = document.createElement("div");
-    body.className = "device-body";
-
-    body.innerHTML = `
+    // 정보 영역
+    const info = document.createElement("div");
+    info.className = "device-info";
+    info.innerHTML = `
       <h3 class="device-title">${device.name}</h3>
       ${device.rating ? renderStars(device.rating) : ''}
-      <p class="device-desc">${device.description || ""}</p>
-      <div class="badges">
-        ${device.badges.map((badge) => `<span class="badge">${badge}</span>`).join("")}
-      </div>
-      <div class="hr"></div>
-      <div class="pros-cons">
-        <div>👍 장점</div>
-        <ul>
-          ${device.pros.map((pro) => `<li>${pro}</li>`).join("")}
-        </ul>
-        <div>⚠️ 단점</div>
-        <ul>
-          ${device.cons.map((con) => `<li>${con}</li>`).join("")}
-        </ul>
-      </div>
-      <div class="hr"></div>
-      <div class="specs">
-        ${Object.entries(device.specs)
-          .map(([k, v]) => entry(k, v))
-          .join("")}
-      </div>
+      <p class="device-hint">클릭하여 상세정보 보기</p>
     `;
 
-    card.append(media, body);
-    return card;
+    card.append(media, info);
+    container.appendChild(card);
+
+    return container;
   };
 
   // 필터링 + 검색 + 정렬 적용
@@ -565,6 +577,18 @@ const Render = (() => {
       card.style.animationDelay = `${idx * 0.05}s`;
       wrapper.appendChild(card);
     });
+
+    // 이벤트 위임: device-grid에서 카드 클릭 처리
+    wrapper.onclick = (e) => {
+      const container = e.target.closest(".device-card-container");
+      if (container) {
+        const deviceKey = container.dataset.deviceKey;
+        const device = Devices.find(d => d.key === deviceKey);
+        if (device) {
+          DeviceModal.open(device);
+        }
+      }
+    };
   };
 
   // 검색/정렬 업데이트 함수
@@ -824,6 +848,129 @@ const Modal = (() => {
   return { init, open, close };
 })();
 
+// ===== 기기 상세 모달 모듈 =====
+const DeviceModal = (() => {
+  let modal, overlay, closeBtn;
+  let modalImage, modalTitle, modalRating, modalDesc;
+  let modalBadges, modalPros, modalCons, modalSpecs;
+
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const hasHalf = rating % 1 >= 0.5;
+    let stars = '';
+    for (let i = 0; i < 5; i++) {
+      if (i < fullStars) {
+        stars += '<span class="star filled">★</span>';
+      } else if (i === fullStars && hasHalf) {
+        stars += '<span class="star filled">★</span>';
+      } else {
+        stars += '<span class="star">★</span>';
+      }
+    }
+    return `<div class="rating">${stars}<span class="rating-value">${rating.toFixed(1)}</span></div>`;
+  };
+
+  const init = () => {
+    modal = document.getElementById("device-modal");
+    if (!modal) return;
+
+    overlay = modal.querySelector(".device-modal-overlay");
+    closeBtn = modal.querySelector(".device-modal-close");
+    modalImage = modal.querySelector(".device-modal-image img");
+    modalTitle = modal.querySelector(".device-modal-title");
+    modalRating = modal.querySelector(".device-modal-rating");
+    modalDesc = modal.querySelector(".device-modal-desc");
+    modalBadges = modal.querySelector(".device-modal-badges");
+    modalPros = document.getElementById("device-modal-pros");
+    modalCons = document.getElementById("device-modal-cons");
+    modalSpecs = modal.querySelector(".device-modal-specs");
+
+    // 닫기 버튼 클릭
+    closeBtn?.addEventListener("click", close);
+
+    // 오버레이 클릭
+    overlay?.addEventListener("click", close);
+
+    // ESC 키
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("active")) {
+        close();
+      }
+    });
+  };
+
+  const open = (device) => {
+    if (!modal) return;
+
+    // 이미지 설정
+    const imgSrc = Names[device.key];
+    if (modalImage) {
+      if (typeof imgSrc === 'string') {
+        modalImage.src = `assets/${imgSrc}`;
+      } else if (Array.isArray(imgSrc) && imgSrc.length > 0) {
+        modalImage.src = `assets/${imgSrc[0]}`;
+      }
+      modalImage.alt = device.name;
+    }
+
+    // 제목
+    if (modalTitle) modalTitle.textContent = device.name;
+
+    // 평점
+    if (modalRating) {
+      modalRating.innerHTML = device.rating ? renderStars(device.rating) : '';
+    }
+
+    // 설명
+    if (modalDesc) modalDesc.textContent = device.description || '';
+
+    // 배지
+    if (modalBadges) {
+      modalBadges.innerHTML = device.badges
+        .map(badge => `<span class="badge">${badge}</span>`)
+        .join('');
+    }
+
+    // 장점
+    if (modalPros) {
+      modalPros.innerHTML = device.pros
+        .map(pro => `<li>${pro}</li>`)
+        .join('');
+    }
+
+    // 단점
+    if (modalCons) {
+      modalCons.innerHTML = device.cons
+        .map(con => `<li>${con}</li>`)
+        .join('');
+    }
+
+    // 스펙
+    if (modalSpecs) {
+      modalSpecs.innerHTML = Object.entries(device.specs)
+        .map(([key, value]) => `
+          <div class="spec-item">
+            <span class="spec-label">${key}</span>
+            <span class="spec-value">${value}</span>
+          </div>
+        `)
+        .join('');
+    }
+
+    // 모달 표시
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  };
+
+  const close = () => {
+    if (!modal) return;
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  };
+
+  return { init, open, close };
+})();
+
 // ===== 검색 모듈 =====
 const Search = (() => {
   const init = () => {
@@ -1017,6 +1164,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Form.init();
     Scroll.init();
     Modal.init();
+    DeviceModal.init();
     Search.init();
     FAQ.init();
     ScrollAnimation.init();
