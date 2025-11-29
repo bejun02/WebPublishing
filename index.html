@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="ko" data-theme="dark" class="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="MyDevice - 개인 전자기기 소개, 장단점, 사양 비교" />
+  <meta name="theme-color" content="#0a0e27" />
+  <title>MyDevice - 전자기기 포트폴리오</title>
+  <link rel="stylesheet" href="전자기기_css.css" />
+</head>
+<body>
+  <!-- 로딩 스피너 -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loader">
+      <div class="loader-spinner"></div>
+      <p class="loader-text">MyDevice 로딩 중...</p>
+    </div>
+  </div>
+
+  <!-- 이미지 모달 (라이트박스) -->
+  <div id="image-modal" class="image-modal" role="dialog" aria-modal="true" aria-label="이미지 확대 보기">
+    <button class="modal-close" id="modal-close" aria-label="닫기">&times;</button>
+    <img id="modal-image" class="modal-image" src="" alt="" />
+    <p id="modal-caption" class="modal-caption"></p>
+  </div>
+
+  <!-- 공지사항 배너 -->
+  <div id="top-banner" class="banner" aria-live="polite" role="status">
+    <span class="banner-text">최신 입력장치 세팅 로딩 중…</span>
+  </div>
+
+  <!-- 헤더 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#home" aria-label="MyDevice 홈">MyDevice</a>
+
+      <nav class="nav" id="primary-nav" aria-label="주요 네비게이션">
+        <button 
+          class="nav-toggle" 
+          id="nav-toggle" 
+          aria-expanded="false" 
+          aria-controls="nav-list" 
+          aria-label="메뉴 열기">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#intro">소개</a></li>
+          <li><a href="#gallery">갤러리</a></li>
+          <li><a href="#specs">스펙</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">연락</a></li>
+        </ul>
+      </nav>
+
+      <button 
+        id="theme-toggle" 
+        class="theme-toggle" 
+        aria-label="테마 전환" 
+        title="다크모드 / 라이트모드 전환">
+        <span class="icon moon" aria-hidden="true">🌙</span>
+        <span class="icon sun" aria-hidden="true">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 스크롤 진행바 -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- 메인 콘텐츠 -->
+  <main id="home">
+    <!-- 히어로 섹션 -->
+    <section id="intro" class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">🎮 Tech Enthusiast's Collection</span>
+        <h1 class="hero-title">MyDevice</h1>
+        <p class="hero-sub">게이밍부터 생산성까지, 제가 직접 사용하고 경험한 전자기기들의 <strong>솔직한 리뷰</strong>와 <strong>상세 사양</strong>을 공유합니다.</p>
+        <div class="hero-actions">
+          <a href="#gallery" class="btn primary">
+            <span>🖼️</span> 갤러리 보기
+          </a>
+          <a href="#specs" class="btn ghost">
+            <span>📋</span> 사양 바로가기
+          </a>
+        </div>
+      </div>
+      
+      <!-- 통계 카드 -->
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number" id="stat-devices">9</span>
+          <span class="stat-label">보유 기기</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">4</span>
+          <span class="stat-label">카테고리</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">144</span>
+          <span class="stat-label">Hz 주사율</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">7K</span>
+          <span class="stat-label">MB/s 속도</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 슬라이더 섹션 -->
+    <section id="gallery" class="section section-animate">
+      <div class="section-head">
+        <h2>이미지 슬라이더</h2>
+        <p class="muted">보유 중인 주요 디바이스를 좌우로 넘겨 보세요.</p>
+      </div>
+
+      <div 
+        class="slider" 
+        id="device-slider" 
+        aria-roledescription="carousel" 
+        aria-label="전자기기 슬라이드">
+        <div class="slides" id="slides" tabindex="0" role="region" aria-label="슬라이드 콘텐츠"></div>
+        <button class="slide-nav prev" id="prev-btn" aria-label="이전 슬라이드">‹</button>
+        <button class="slide-nav next" id="next-btn" aria-label="다음 슬라이드">›</button>
+        
+        <!-- 슬라이더 컨트롤 -->
+        <div class="slider-controls">
+          <button class="slider-play-btn" id="slider-play-btn" aria-label="자동 재생 일시정지">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon">⏸</span>
+          </button>
+          <span class="slide-counter" id="slide-counter">1 / 5</span>
+        </div>
+        
+        <div class="dots" id="dots" role="tablist" aria-label="슬라이드 선택 점"></div>
+      </div>
+    </section>
+
+    <!-- 디바이스 그리드 섹션 -->
+    <section id="specs" class="section section-animate">
+      <div class="section-head">
+        <h2>디바이스 목록 · 장단점 · 사양</h2>
+        <p class="muted">그리드 배치로 정렬된 전체 기기 정보</p>
+      </div>
+      
+      <!-- 카테고리 필터 -->
+      <div class="filter-bar" role="tablist" aria-label="카테고리 필터">
+        <button class="filter-btn active" data-category="all" role="tab" aria-selected="true">🔥 전체</button>
+        <button class="filter-btn" data-category="입력장치" role="tab" aria-selected="false">⌨️ 입력장치</button>
+        <button class="filter-btn" data-category="PC부품" role="tab" aria-selected="false">🖥️ PC부품</button>
+        <button class="filter-btn" data-category="디스플레이" role="tab" aria-selected="false">🖼️ 디스플레이</button>
+        <button class="filter-btn" data-category="오디오" role="tab" aria-selected="false">🔊 오디오</button>
+        <button class="filter-btn" data-category="모바일" role="tab" aria-selected="false">💻 모바일</button>
+        <button class="filter-btn" data-category="게임" role="tab" aria-selected="false">🎮 게임</button>
+      </div>
+      
+      <!-- 검색 및 정렬 -->
+      <div class="search-sort-bar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input 
+            type="text" 
+            id="device-search" 
+            class="search-input" 
+            placeholder="기기 검색..." 
+            aria-label="기기 검색" />
+          <button id="search-clear" class="search-clear" aria-label="검색어 지우기" style="display:none;">&times;</button>
+        </div>
+        <div class="sort-box">
+          <label for="sort-select" class="sort-label">정렬:</label>
+          <select id="sort-select" class="sort-select" aria-label="정렬 방식">
+            <option value="default">기본순</option>
+            <option value="name">이름순</option>
+            <option value="rating">평점순</option>
+            <option value="category">카테고리순</option>
+          </select>
+        </div>
+      </div>
+      
+      <div id="device-grid" class="device-grid" aria-live="polite" role="region" aria-label="기기 목록"></div>
+      
+      <!-- 필터 결과 없음 메시지 -->
+      <div id="no-results" class="no-results" style="display: none;">
+        <span class="no-results-icon">🔍</span>
+        <p>해당 카테고리의 기기가 없습니다.</p>
+      </div>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact" class="section section-animate">
+      <div class="section-head">
+        <h2>연락하기</h2>
+        <p class="muted">기기에 대한 질문이나 협업 제안이 있으시면 편하게 연락주세요!</p>
+      </div>
+      
+      <div class="contact-wrapper">
+        <!-- 연락처 정보 -->
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <strong>이메일</strong>
+              <p>mydevice@example.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">💬</span>
+            <div>
+              <strong>Discord</strong>
+              <p>MyDevice#1234</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <strong>위치</strong>
+              <p>대한민국, 서울</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 연락 폼 -->
+        <form class="contact-form" id="contact-form" aria-label="연락 양식">
+          <div class="row">
+            <div class="form-group">
+              <label for="name">이름 <span class="required">*</span></label>
+              <input 
+                type="text" 
+                id="name"
+                name="name"
+                placeholder="홍길동" 
+                required 
+                minlength="2"
+                maxlength="50" />
+              <span class="error-msg" id="name-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">이메일 <span class="required">*</span></label>
+              <input 
+                type="email" 
+                id="email"
+                name="email"
+                placeholder="example@email.com" 
+                required />
+              <span class="error-msg" id="email-error"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">제목</label>
+            <input 
+              type="text" 
+              id="subject"
+              name="subject"
+              placeholder="문의 제목을 입력하세요" />
+          </div>
+          <div class="form-group">
+            <label for="message">내용 <span class="required">*</span></label>
+            <textarea 
+              id="message"
+              name="message"
+              placeholder="문의 내용을 자세히 적어주세요..." 
+              rows="5" 
+              required
+              minlength="10"></textarea>
+            <span class="error-msg" id="message-error"></span>
+          </div>
+          <button class="btn primary" type="submit" id="submit-btn">
+            <span class="btn-text">📤 메시지 보내기</span>
+            <span class="btn-loading" style="display:none;">전송 중...</span>
+          </button>
+        </form>
+      </div>
+      
+      <!-- 성공 메시지 -->
+      <div id="form-success" class="form-success" style="display: none;">
+        <span class="success-icon">✅</span>
+        <h3>메시지가 전송되었습니다!</h3>
+        <p>빠른 시일 내에 답변 드리겠습니다.</p>
+      </div>
+    </section>
+
+    <!-- FAQ 섹션 -->
+    <section id="faq" class="section section-animate">
+      <div class="section-head">
+        <h2>자주 묻는 질문</h2>
+        <p class="muted">궁금한 점들을 모아봤습니다</p>
+      </div>
+      
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>이 기기들은 실제로 사용 중인가요?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>네, 모든 기기는 제가 실제로 구매하여 일상적으로 사용하고 있습니다. 리뷰는 최소 2주 이상 사용한 후 작성했습니다.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>기기 추천을 받을 수 있나요?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>물론입니다! 연락처 폼을 통해 문의해 주시면, 용도와 예산에 맞는 기기를 추천해 드릴 수 있습니다.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>사양 정보는 어디서 확인하나요?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>각 기기 카드 하단에 핵심 사양이 정리되어 있습니다. 더 자세한 정보가 필요하시면 문의해 주세요.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>다크모드는 어떻게 전환하나요?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>헤더 우측의 🌙/☀️ 버튼을 클릭하거나, 키보드에서 <kbd>D</kbd> 키를 눌러 전환할 수 있습니다.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>웹사이트는 어떤 기술로 만들어졌나요?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>순수 HTML5, CSS3, JavaScript(ES6+)만으로 제작되었습니다. 프레임워크 없이 모듈 패턴으로 구조화했습니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 맨 위로 버튼 -->
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="맨 위로 스크롤" title="맨 위로">
+    <span>↑</span>
+  </button>
+
+  <!-- 푸터 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">MyDevice</span>
+        <p class="footer-desc">개인 전자기기 컬렉션을 소개하는 포트폴리오 사이트입니다. 게이밍, 생산성, 일상에서 사용하는 다양한 기기들의 솔직한 리뷰를 공유합니다.</p>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>바로가기</h4>
+          <ul>
+            <li><a href="#intro">소개</a></li>
+            <li><a href="#gallery">갤러리</a></li>
+            <li><a href="#specs">스펙</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">연락</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>카테고리</h4>
+          <ul>
+            <li><a href="#specs" data-filter="입력장치">입력장치</a></li>
+            <li><a href="#specs" data-filter="PC부품">PC부품</a></li>
+            <li><a href="#specs" data-filter="디스플레이">디스플레이</a></li>
+            <li><a href="#specs" data-filter="오디오">오디오</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>소셜</h4>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="GitHub" title="GitHub">🐙</a>
+            <a href="#" class="social-link" aria-label="Twitter" title="Twitter">🐦</a>
+            <a href="#" class="social-link" aria-label="Instagram" title="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="YouTube" title="YouTube">📺</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> MyDevice. 웹퍼블리싱 기말과제 | Made with 💜</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="전자기기_javascript.js" defer></script>
+</body>
+</html>
+
+
+<!-- 완료 -->
