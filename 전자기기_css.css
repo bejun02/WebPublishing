@@ -38,6 +38,7 @@ html.theme-light .logo{
   -webkit-text-fill-color:transparent;
   background:linear-gradient(135deg,#4f46e5,#0891b2);
   -webkit-background-clip:text;background-clip:text;
+  filter:none;
 }
 
 html[data-theme="light"] .site-header,
@@ -202,7 +203,6 @@ body{
   filter:drop-shadow(0 0 8px rgba(129,140,248,.3));
 }
 .logo:hover{transform:scale(1.05);filter:drop-shadow(0 0 12px rgba(129,140,248,.5))}
-html[data-theme="light"] .logo{-webkit-text-fill-color:auto;background:none;color:var(--color-primary)}
 .nav{display:flex;align-items:center;gap:var(--sp-5)}
 .nav-list{display:flex;align-items:center;gap:var(--sp-5);list-style:none;margin:0;padding:0}
 .nav-list a{
